@@ -1,0 +1,58 @@
+<div class=" flex flex-col gap-y-8 w-full h-full bg-slate-950 text-black px-24">
+
+  <div class=" bg-white border border-[#DCDEE2] shadow-xs shadow-[#BABABA]
+                grid grid-cols-7">
+    <div class="flex flex-row gap-x-2 col-span-2 bg-[#DCDEE2] h-full text-[#173DED] ">
+      <p class="pt-4 pl-4">Für Mitmenschen</p>
+    </div>
+    <div class="col-span-4 text-[#000051] p-4 bg-white">
+      <ul>
+        <li>crossfunktionale Zusammenarbeit</li>
+        @if (showMorePeople) {
+            <p class="px-8">- weniger Abteilungssilos, dafür mehr Austausch</p>
+            <p class="px-8">-  mehrere Perspektiven auf ein Thema helfen bei schnelleren Entscheidungen</p>
+            <p class="px-8 pb-2">- Kombination von verschiedenen Skills sind ein Boost bei komplexen Themen</p>
+
+        }
+        <li>Zusammenarbeit & Verantwortung für Auszubildende</li>
+        @if (showMorePeople) {
+          <li class="px-8">- maximale Lernkurve durch Learning by Doing für Nachwuchskräfe</li>
+          <li class="px-8">- praxisnahes und zielgerichtetes Lernen</li>
+          <li class="px-8 pb-2">- erfordert gutes Zeitmanagement, Stresstoleranz und Lernbereitschaft auf beiden Seiten</li>
+        }
+        <li>Pair & Mobprogramming</li>
+        @if (showMorePeople) {
+
+        <li class="px-8">- nicht dogmatisch, sondern bewusst und situativ</li>
+          <li class="px-8 ">- höhere Codequalität und Stabilität</li>
+          <li class="px-8 pb-2">- Motivations- und Kulturboost</li>
+        }
+      </ul>
+    </div>
+    <div class="col-span-1 flex justify-end p-2 text-[#173DED] bg-white">
+      @if (showMorePeople) {
+
+      <mat-icon  class="hover:text-[#000051] hover:rounded-full hover:bg-[#DCDEE2] cursor-pointer" (click)="openMorePeople()">close_fullscreen</mat-icon>
+      } @else {
+      <mat-icon  class="hover:text-[#000051] hover:rounded-full hover:bg-[#DCDEE2] cursor-pointer" (click)="openMorePeople()">open_in_full</mat-icon>
+
+      }
+    </div>
+
+  </div>
+  <div class=" bg-white border border-[#DCDEE2] shadow-xs shadow-[#BABABA]
+                grid grid-cols-7">
+    <div class="flex flex-row gap-x-2 col-span-2 bg-[#DCDEE2] h-full text-[#173DED] ">
+      <p class="self-center pl-4">Fürs Köpfchen</p>
+    </div>
+    <div class="col-span-5 text-[#000051] p-4">
+      <ul>
+        <li>strukturierte Arbeitsweise</li>
+        <li>hoher Qualitätsanspruch</li>
+        <li>Pair & Mobprogramming</li>
+      </ul>
+    </div>
+  <div class="bg-white rounded-md border-[#DCDEE2] p-4">
+    Für Mich
+  </div>
+</div>
