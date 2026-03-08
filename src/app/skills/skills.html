@@ -1,18 +1,16 @@
-<div class=" flex flex-col gap-y-8 w-full h-full bg-slate-950 text-black px-24">
+<div class=" flex flex-col gap-y-8 w-full pb-9 bg-[#F8FBFC] text-black px-56 pt-12 h-full overflow-y-scroll">
 
-  <div class=" bg-white border border-[#DCDEE2] shadow-xs shadow-[#BABABA]
-                grid grid-cols-7">
-    <div class="flex flex-row gap-x-2 col-span-2 bg-[#DCDEE2] h-full text-[#173DED] ">
+  <div class=" card">
+    <div class="card-title">
       <p class="pt-4 pl-4">Für Mitmenschen</p>
     </div>
-    <div class="col-span-4 text-[#000051] p-4 bg-white">
+    <div class="card-content">
       <ul>
         <li>crossfunktionale Zusammenarbeit</li>
         @if (showMorePeople) {
             <p class="px-8">- weniger Abteilungssilos, dafür mehr Austausch</p>
             <p class="px-8">-  mehrere Perspektiven auf ein Thema helfen bei schnelleren Entscheidungen</p>
             <p class="px-8 pb-2">- Kombination von verschiedenen Skills sind ein Boost bei komplexen Themen</p>
-
         }
         <li>Zusammenarbeit & Verantwortung für Auszubildende</li>
         @if (showMorePeople) {
@@ -22,37 +20,78 @@
         }
         <li>Pair & Mobprogramming</li>
         @if (showMorePeople) {
-
-        <li class="px-8">- nicht dogmatisch, sondern bewusst und situativ</li>
+          <li class="px-8">- nicht dogmatisch, sondern bewusst und situativ</li>
           <li class="px-8 ">- höhere Codequalität und Stabilität</li>
           <li class="px-8 pb-2">- Motivations- und Kulturboost</li>
         }
       </ul>
     </div>
-    <div class="col-span-1 flex justify-end p-2 text-[#173DED] bg-white">
+    <div class="card-button">
       @if (showMorePeople) {
-
-      <mat-icon  class="hover:text-[#000051] hover:rounded-full hover:bg-[#DCDEE2] cursor-pointer" (click)="openMorePeople()">close_fullscreen</mat-icon>
+        <mat-icon  class="btn" (click)="openMorePeople()">close_fullscreen</mat-icon>
       } @else {
-      <mat-icon  class="hover:text-[#000051] hover:rounded-full hover:bg-[#DCDEE2] cursor-pointer" (click)="openMorePeople()">open_in_full</mat-icon>
-
+        <mat-icon  class="btn" (click)="openMorePeople()">open_in_full</mat-icon>
       }
     </div>
 
   </div>
-  <div class=" bg-white border border-[#DCDEE2] shadow-xs shadow-[#BABABA]
-                grid grid-cols-7">
-    <div class="flex flex-row gap-x-2 col-span-2 bg-[#DCDEE2] h-full text-[#173DED] ">
-      <p class="self-center pl-4">Fürs Köpfchen</p>
+  <div class="card">
+    <div class="card-title">
+      <p class="pt-4 pl-4">Für die Arbeitsorganisation</p>
     </div>
-    <div class="col-span-5 text-[#000051] p-4">
+    <div class="card-content">
       <ul>
         <li>strukturierte Arbeitsweise</li>
+        @if (showMoreForMe) {
+          <li class="px-8">- Für nachverfolgbare Zwischenziele</li>
+          <li class="px-8 ">- Für Dokumentation und Nachvollziehbarkeit</li>
+          <li class="px-8 pb-2">- Für Umgang mit der Komplexität</li>
+        }
         <li>hoher Qualitätsanspruch</li>
-        <li>Pair & Mobprogramming</li>
+        @if (showMoreForMe) {
+          <li class="px-8">- Ich bin überzeugt, dass es stets um Qualität geht, nicht um Quantität</li>
+          <li class="px-8 pb-2">- Ich nehme jeden Schritt der Entwicklung ernst</li>
+        }
       </ul>
     </div>
-  <div class="bg-white rounded-md border-[#DCDEE2] p-4">
-    Für Mich
+    <div class="card-button">
+      @if (showMoreForMe) {
+        <mat-icon  class="btn" (click)="openMoreForMe()">close_fullscreen</mat-icon>
+      } @else {
+        <mat-icon  class="btn" (click)="openMoreForMe()">open_in_full</mat-icon>
+      }
+    </div>
   </div>
+
+  <div class=" card">
+
+    <div class="card-title">
+      <p class="pt-4 pl-4">Für einen selbst</p>
+    </div>
+    <div class="card-content">
+      <ul>
+        <li>Interessiert an der Persönlichkeitsentwicklung</li>
+        @if (showPersonality) {
+          <li class="px-8">- Gesellschaft, Kultur, Arbeitswelt sind im Wandel, so auch man selbst</li>
+          <li class="px-8 pb-2">- Klarheit über innere Werte dienen stets als Kompass</li>
+        }
+        <li>Neugierig und Offen</li>
+        @if (showPersonality) {
+          <li class="px-8">- Kommunikation und Kollaboration</li>
+          <li class="px-8">- Verständnis für das "Big Picture"</li>
+          <li class="px-8 pb-2">- Blick über den Tellerrand</li>
+        }
+      </ul>
+    </div>
+    <div class="card-button">
+      @if (showPersonality) {
+        <mat-icon  class="btn" (click)="openPersonality()">close_fullscreen</mat-icon>
+      } @else {
+        <mat-icon  class="btn" (click)="openPersonality()">open_in_full</mat-icon>
+      }
+    </div>
+  </div>
+
+
+
 </div>

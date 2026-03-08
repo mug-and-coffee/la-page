@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+.card {
+  @apply
+    bg-white
+    rounded-md
+  shadow-[0_1px_10px_rgba(0,0,0,0.25)]
+      grid grid-cols-7;
+}
+
+.card-title {
+  @apply flex flex-row gap-x-2 col-span-2 h-full text-gray-800 font-medium ;
+}
+
+.card-content {
+  @apply col-span-4 text-gray-800 p-4 border-l border-l-gray-200;
+}
+
+.card-button {
+  @apply col-span-1 flex justify-end p-2 text-gray-500
+}
+
+.btn{
+  @apply hover:text-[#C50614] hover:rounded-full hover:bg-[#DCDEE2] cursor-pointer;
+}

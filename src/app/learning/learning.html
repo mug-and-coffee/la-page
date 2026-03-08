@@ -1,0 +1,85 @@
+  <div class="pl-24 h-full overflow-y-scroll pt-12">
+    <div class="card">
+      <p-timeline [value]="events" class="customized-timeline" >
+        <ng-template #opposite let-event>
+            <p class="text-surface-500 dark:text-surface-400 w-[300px]">{{ event.date }}</p>
+        </ng-template>
+        <ng-template #content let-event >
+
+          <!-- card for job -->
+          @if (event.type ==='business_center') {
+            <div class="bg-white shadow-[0_1px_10px_rgba(0,0,0,0.25)] rounded-md mb-12 pb-4 pt-2  w-[500px] flex flex-col">
+
+              <div class="flex mt-2 mb-2 px-8">
+                  <div class="flex flex-row">
+                    <mat-icon  class="mr-3">{{event.type}}</mat-icon>
+                    <p class="mt-1">{{ event.status }}</p>
+                  </div>
+              </div>
+              <p class="pt-3 border-t border-t-gray-300 pr-4 pl-17">{{event.name}}</p>
+            </div>
+          }
+
+          <!-- card for education -->
+          @if (event.type ==='menu_book') {
+            <div class="bg-white shadow-[0_1px_10px_rgba(0,0,0,0.25)] rounded-md mb-12 pb-4 pt-2 px-2 w-[500px] flex flex-col">
+
+              <div class="flex mt-2 pl-8 pr-2">
+                <div class="flex w-full justify-between">
+                  <div class="flex flex-row">
+                    <mat-icon  class="mr-3">{{event.type}}</mat-icon>
+                    <p class="mt-1">{{ event.status }}</p>
+                  </div>
+                  @if (event.key === '1') {
+                    <button class="bg-gray-200 flex h-fit p-1 rounded-md" (click)="showIsaqb()">
+                      <mat-icon >preview</mat-icon>
+                    </button>
+                  } @else if (event.key === '2') {
+                    <button class="bg-gray-200 flex h-fit p-1 rounded-md" (click)="showOracle()">
+                      <mat-icon >preview</mat-icon>
+                    </button>
+                  }
+                  @else if (event.key === '3') {
+                    <button class="bg-gray-200 flex h-fit p-1 rounded-md" (click)="showItil()">
+                      <mat-icon >preview</mat-icon>
+                    </button>
+                  }
+
+                </div>
+              </div>
+            </div>
+          }
+
+          @if (event.type === 'school') {
+            <div class="bg-white shadow-[0_1px_10px_rgba(0,0,0,0.25)] rounded-md mb-12 pb-4 pt-2  w-[500px] flex flex-col">
+
+              <div class="flex mt-2 mb-2">
+                <div class="flex w-full justify-between">
+
+                  <div class="flex flex-row px-8">
+                    <mat-icon  class="mr-3">{{event.type}}</mat-icon>
+                    <p class="mt-1">{{ event.status }}</p>
+                  </div>
+                </div>
+              </div>
+                    <p class="pt-2 border-t border-t-gray-300 pl-10">{{event.name}}</p>
+            </div>
+          }
+
+
+        </ng-template>
+      </p-timeline>
+    </div>
+  </div>
+
+  <p-dialog header="ISAQB® Foundation Level" [modal]="true" [(visible)]="isaqbVisible" [style]="{ width: '25rem' }">
+    <img src="assets/images/isaqb.jpg" alt="isaqb">
+  </p-dialog>
+
+  <p-dialog header="ITIL" [modal]="true" [(visible)]="itilVisible" [style]="{ width: '25rem' }">
+    <img src="assets/images/itil.jpg" alt="itil">
+  </p-dialog>
+
+  <p-dialog header="ITIL" [modal]="true" [(visible)]="oracleVisible" [style]="{ width: '40rem' }">
+    <img src="assets/images/oracle.jpg" alt="itil">
+  </p-dialog>

@@ -1,50 +1,56 @@
-<header class=" flex flex-row justify-between
-                fixed border-b  top-0 left-0 w-full h-20 bg-[#BABABA] text-[#006EC7] items-center">
+
+<div class="
+     sticky top-0 z-50 shadow-[0_25px_25px_-10px_rgba(55,65,81,0.2)] flex flex-row justify-between w-full h-20 bg-white items-center mb-4">
 
   <div class="flex flex-row justify-end align-middle">
-    <div class="w-14 h-14 rounded-full align-middle overflow-hidden border border-slate-900 mx-6">
+    <div class="w-14 h-14 rounded-full align-middle overflow-hidden mx-6">
       <img
         src="https://media.licdn.com/dms/image/v2/D4E03AQFrALhVFN3c3w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1696699686355?e=1773878400&v=beta&t=cOanIptrq9TY4Nue5EdEg4r1raWWk1EaLbldqlRVCrQ"
         class="w-full h-full object-cover object-center"
       />
     </div>
-    <div class="text-[#000051] self-center">Lena Akimov</div>
+    <div class="text-[#E40001] text-2xl font-bold self-center">Lena Akimov</div>
   </div>
 
-  <div class="flex flex-row h-full px-6">
-
-    <button (click)="onSkills()" class="text-[#000051] h-full border-b-4 border-b-[#BABABA] px-4 flex-col cursor-pointer
-                  flex items-center align-middle justify-end hover:text-[#173DED]
-                  hover:border-b-4 hover:border-b-[#173DED] hover:bg-[#DCDEE2] pb-2" >
+  <div class="flex flex-row px-6 gap-x-2 h-full">
+    <button (click)="onStart()" class="{{homeButtonCSS}}">
       <mat-icon>home</mat-icon>
-      Start
+      <p>Start</p>
     </button>
 
-    <button (click)="onSkills()" class="text-[#000051] h-full border-b-4 border-b-[#BABABA] px-4 flex-col cursor-pointer
-                  flex items-center align-middle justify-end hover:text-[#173DED]
-                  hover:border-b-4 hover:border-b-[#173DED] hover:bg-[#DCDEE2] pb-2" >
+    <button (click)="onVita()" class="{{vitaButtonCSS}}" >
+      <mat-icon>person_text</mat-icon>
+      <p>Vita</p>
+    </button>
+
+    <button (click)="onSkills()" class="{{skillsButtonCSS}}" >
       <mat-icon>psychology_alt</mat-icon>
-      Skills
+      <p>Soft Skills</p>
     </button>
-    <button (click)="onSkills()" class="text-[#000051] h-full border-b-4 border-b-[#BABABA] px-4 flex-col cursor-pointer
-                  flex items-center align-middle justify-end hover:text-[#173DED]
-                  hover:border-b-4 hover:border-b-[#173DED] hover:bg-[#DCDEE2] pb-2" >
-      <mat-icon>desktop_mac</mat-icon>
-      Learning
-    </button>
-    <button (click)="onSkills()" class="text-[#000051] h-full border-b-4 border-b-[#BABABA] px-4 flex-col cursor-pointer
-                  flex items-center align-middle justify-end hover:text-[#173DED]
-                  hover:border-b-4 hover:border-b-[#173DED] hover:bg-[#DCDEE2] pb-2" >
-      <mat-icon>menu_book</mat-icon>
-      Working
+
+    <button (click)="onTechSkill()" class="{{techSkillButtonCSS}}" >
+      <mat-icon>settings_applications</mat-icon>
+      <p>technische Skills</p>
     </button>
   </div>
-</header>
+</div>
 
 <!-- Main -->
-<main class="absolute top-20 left-0 right-0 bottom-0 h-full overflow-y-auto p-12 bg-slate-950">
+<div class=" bg-[#F8FBFC] h-[90%]">
   @if (skillsVisible) {
     <app-skills></app-skills>
   }
 
-</main>
+  @if (startVisible) {
+    <app-start></app-start>
+  }
+
+  @if (vitaVisible) {
+    <app-learning></app-learning>
+  }
+
+  @if(techSkillVisible) {
+    <app-tech-skills></app-tech-skills>
+  }
+
+</div>

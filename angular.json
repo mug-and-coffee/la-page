@@ -22,9 +22,15 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+
+              },
+              "src/assets"
             ],
-            "styles": ["src/material-theme.scss", "src/styles.css"]
+            "styles": [
+              "src/material-theme.scss",
+              "node_modules/primeicons/primeicons.css",
+              "src/styles.css"
+            ]
           },
           "configurations": {
             "production": {

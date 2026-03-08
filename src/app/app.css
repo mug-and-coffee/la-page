@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+.main-button {
+  @apply hover:text-[#E40001] pr-6 pl-2
+    text-gray-800 h-full flex-row gap-x-1 hover:bg-gray-200 cursor-pointer
+  flex items-center align-middle justify-end pb-2;
+}
+
+.main-button-actual {
+  @apply hover:text-[#E40001] border-b-4 border-b-[#E40001] pr-6 pl-4 bg-gray-100
+  text-gray-800 h-full flex-row gap-x-1 hover:bg-gray-200 cursor-pointer
+  flex items-center align-middle justify-end pb-2;
+}
+
+/*.main-button {
+  @apply
+    cursor-pointer
+    flex flex-row items-center justify-center gap-x-2
+  hover:bg-gray-300
+    px-4 py-1 rounded-md
+  hover:text-gray-950
+    text-gray-800 ;
+}
+
+.main-button-actual {
+  @apply
+    cursor-pointer
+  flex flex-row items-center justify-center gap-x-2
+  px-4 py-2 rounded-md
+  hover:bg-gray-300
+    border-2 border-gray-300
+    hover:text-gray-950
+  text-gray-800 ;
+}*/
+
+

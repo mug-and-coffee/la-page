@@ -1,0 +1,16 @@
+<div class=" mx-56 pt-12 h-full">
+
+  <div class="grid grid-cols-2 gap-x-4 gap-y-4">
+    @for ( skill of skills; track skills) {
+      <div class="skill-card">
+        <div class="skill-headline">{{skill.title}}</div>
+        <div class="skill-description">{{skill.description}}</div>
+        <ul class="list-disc pl-8 pt-4">
+          @for (point of skill.bulletPoints; track skills) {
+            <li>{{point}}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</div>

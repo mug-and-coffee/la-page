@@ -1,0 +1,16 @@
+@import "tailwindcss";
+.skill-card {
+  @apply
+    bg-white
+      p-4
+    rounded-md
+      shadow-[0_1px_10px_rgba(0,0,0,0.25)];
+}
+
+.skill-headline {
+  @apply font-bold text-gray-600 border-b border-b-gray-200 pb-2
+}
+
+.skill-description {
+  @apply italic text-gray-800 pt-2 pb-2 border-b border-b-gray-200;
+}

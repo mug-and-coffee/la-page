@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-skills',
@@ -9,8 +9,18 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
 })
 export class Skills {
   showMorePeople = false;
+  showMoreForMe = false;
+  showPersonality = false;
 
   openMorePeople() {
     this.showMorePeople = !this.showMorePeople;
+  }
+
+  openMoreForMe() {
+    return this.showMoreForMe = !this.showMoreForMe;
+  }
+
+  openPersonality() {
+    return this.showPersonality = !this.showPersonality;
   }
 }
